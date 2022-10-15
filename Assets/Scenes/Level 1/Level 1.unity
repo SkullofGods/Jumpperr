@@ -17293,6 +17293,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 171966909}
+  _offset: {x: 3, y: 1.5, z: -10}
 --- !u!1 &964807956
 GameObject:
   m_ObjectHideFlags: 0
@@ -35652,6 +35653,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 963194227}
+    - target: {fileID: 2858733196600248435, guid: 2a48e7458ee80a44ba02c59157280567, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 2858733196600248446, guid: 2a48e7458ee80a44ba02c59157280567, type: 3}
       propertyPath: m_Name
       value: GUI

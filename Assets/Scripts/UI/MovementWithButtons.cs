@@ -23,7 +23,7 @@ public class MovementWithButtons : MonoBehaviour
         }
 
         if (isRightPressed && !liver.Dead)
-        {
+        { 
             player.transform.Translate(Vector3.right*Time.deltaTime*speed, Space.World);
         }
     }

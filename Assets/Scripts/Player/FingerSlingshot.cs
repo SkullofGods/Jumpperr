@@ -19,10 +19,12 @@ public class FingerSlingshot : MonoBehaviour
     public Projectile liver;
     public MovementWithButtons speed;
 
+    private float _startSpeed;
 
     void Start()
     {
         TrajectoryLineRenderer.sortingLayerName = "Foreground";
+        _startSpeed = speed.speed;
     }
 
     public void Update()
@@ -107,13 +109,13 @@ public class FingerSlingshot : MonoBehaviour
 
     private void OnCollisionStay(Collision other)
     {
-        speed.speed = 5f;
+        speed.speed = _startSpeed;
         _isFlying = false;
     }
 
     private void OnCollisionExit(Collision other)
     {
-        speed.speed = 3f;
+        speed.speed = _startSpeed/2f;
         _isFlying = true;
     }
 }

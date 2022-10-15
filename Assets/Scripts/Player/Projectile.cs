@@ -38,9 +38,6 @@ public class Projectile : MonoBehaviour
     void Start()
     {
         startingPoint.LastCheckpoint();
-
-        //trailrenderer is not visible until we throw
-        GetComponent<TrailRenderer>().enabled = false;
         GetComponent<TrailRenderer>().sortingLayerName = "Foreground";
     }
     
