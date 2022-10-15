@@ -44,12 +44,6 @@ public class Projectile : MonoBehaviour
         GetComponent<TrailRenderer>().sortingLayerName = "Foreground";
     }
     
-    public void OnThrow()
-    {
-        //show the trail renderer
-        GetComponent<TrailRenderer>().enabled = true;
-    }
-
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Checkpoint") && !Dead)

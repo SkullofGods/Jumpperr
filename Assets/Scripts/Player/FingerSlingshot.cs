@@ -15,7 +15,7 @@ public class FingerSlingshot : MonoBehaviour
     private bool _isFlying = false;
     Vector3 _loca = new Vector3();
     Vector2 _mousePos = new Vector2();
-
+    
     public Projectile liver;
     public MovementWithButtons speed;
 
@@ -67,7 +67,6 @@ public class FingerSlingshot : MonoBehaviour
             velocity.y = -2.5f;
         if (distance >= 6f)
             distance = 6f;
-        Player.GetComponent<Projectile>().OnThrow();
         Player.GetComponent<Rigidbody>().velocity = new Vector3(velocity.x, velocity.y, 0f) * ThrowSpeed * distance;
     }
     
