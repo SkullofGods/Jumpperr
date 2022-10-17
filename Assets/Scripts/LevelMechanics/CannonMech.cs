@@ -7,8 +7,10 @@ public class CannonMech : MonoBehaviour
     [Header("Bullet")]
     public GameObject projectile;
     public Transform spawnPosition;
-    [Header("ShootingSettings")]
-    public float force, delay, lifetime;
+    [Header("ShootingSettings")] 
+    public float force;
+    public float delay;
+    public float lifetime;
 
     private bool _shouldShoot = true;
     
@@ -19,15 +21,16 @@ public class CannonMech : MonoBehaviour
             _shouldShoot = false;
             StartCoroutine(Shoot());
         }
+        
+        
     }
 
     private IEnumerator Shoot()
     {
-        projectile = Instantiate(projectile, spawnPosition.position, Quaternion.identity);
-        projectile.GetComponent<Rigidbody>().velocity = Vector3.right*force;
-        projectile.GetComponent<CannonBall>().lifetime = lifetime;
-        
-        
+        var proj = Instantiate(projectile, spawnPosition.position, this.transform.rotation);
+        proj.GetComponent<Rigidbody>().velocity = proj.transform.TransformDirection(Vector3.right) * force;
+        proj.GetComponent<CannonBall>().lifetime = lifetime;
+
         yield return new WaitForSeconds(delay);
         _shouldShoot = true;
     }
