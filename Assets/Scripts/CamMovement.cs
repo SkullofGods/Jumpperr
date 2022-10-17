@@ -5,9 +5,9 @@ using UnityEngine;
 public class CamMovement : MonoBehaviour
 {
     public GameObject Player;
-    public Vector3 _offset = new Vector3(5.68f, 1f, -10);
+    public Vector3 offset = new Vector3();
     void Update()
     {
-        transform.position = Player.transform.position + _offset;
+        transform.position = Player.transform.position + offset;
     }
 }

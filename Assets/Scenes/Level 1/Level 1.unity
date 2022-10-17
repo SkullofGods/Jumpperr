@@ -17293,7 +17293,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 171966909}
-  _offset: {x: 3, y: 1.5, z: -10}
+  offset: {x: 3, y: 1.4, z: -10}
 --- !u!1 &964807956
 GameObject:
   m_ObjectHideFlags: 0
@@ -35669,6 +35669,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 171966909}
+    - target: {fileID: 2858733197406445316, guid: 2a48e7458ee80a44ba02c59157280567, type: 3}
+      propertyPath: Checkpoints.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2858733197406445316, guid: 2a48e7458ee80a44ba02c59157280567, type: 3}
       propertyPath: Checkpoints.Array.data[0]
       value: 
