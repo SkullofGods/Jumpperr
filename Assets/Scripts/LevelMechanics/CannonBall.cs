@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CannonBall : MonoBehaviour
 {
+    [HideInInspector]
     public float lifetime; 
     void Start()
     {
