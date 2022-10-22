@@ -11,20 +11,14 @@ public class PlatformMovement : MonoBehaviour
     {
         rbody = GetComponent<Rigidbody>();
     }
- 
-    void Update()
-    {
-        if(isOnPlatform)
-            transform.position = Vector3.Lerp(transform.localPosition, _platform.gameObject.transform.position+Vector3.up*0.5f,
-            Time.deltaTime * _platform.speed*3);
-    }
- 
-    void OnCollisionEnter(Collision col)
+    
+    void OnCollisionStay(Collision col)
     {
         if(col.gameObject.CompareTag("MovingP"))
         {
             isOnPlatform = true;
             _platform = col.gameObject.GetComponent<MovingPlatform>();
+            transform.parent = col.gameObject.transform;
         }
     }
  
@@ -33,6 +27,7 @@ public class PlatformMovement : MonoBehaviour
         if(col.gameObject.CompareTag("MovingP"))
         {
             isOnPlatform = false;
+            transform.parent = null;
         }
     }
 }
