@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,7 +12,13 @@ public class PlatformMovement : MonoBehaviour
     {
         rbody = GetComponent<Rigidbody>();
     }
-    
+
+    private void Update()
+    {
+        if (!isOnPlatform)
+            transform.localScale = Vector3.one;
+    }
+
     void OnCollisionStay(Collision col)
     {
         if(col.gameObject.CompareTag("MovingP"))

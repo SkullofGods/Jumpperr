@@ -38,7 +38,8 @@ public class Projectile : MonoBehaviour
     void Start()
     {
         startingPoint.LastCheckpoint();
-        GetComponent<TrailRenderer>().sortingLayerName = "Foreground";
+        if (GetComponent<TrailRenderer>()!=null)
+            GetComponent<TrailRenderer>().sortingLayerName = "Foreground";
     }
     
     private void OnCollisionEnter(Collision other)
