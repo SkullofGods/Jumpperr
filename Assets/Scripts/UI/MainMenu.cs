@@ -34,6 +34,8 @@ public class MainMenu : MonoBehaviour
     
     public void LevelChoose()
     {
+        PlayerPrefs.SetInt("LastCheckpoint",0);
+        PlayerPrefs.SetInt("DeathCount", 0);
         SceneManager.LoadScene(EventSystem.current.currentSelectedGameObject.name);
     }
 
