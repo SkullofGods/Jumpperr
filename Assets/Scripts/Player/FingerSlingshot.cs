@@ -7,7 +7,6 @@ public class FingerSlingshot : MonoBehaviour
    
     private Vector3 SlingshotMiddleVector;
 
-    
     public LineRenderer TrajectoryLineRenderer;
     
     public GameObject Player;
@@ -26,7 +25,7 @@ public class FingerSlingshot : MonoBehaviour
         TrajectoryLineRenderer.sortingLayerName = "Foreground";
         _startSpeed = speed.speed;
     }
-
+    
     public void Update()
     {
         _mousePos.x = Input.mousePosition.x;
